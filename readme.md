@@ -7,6 +7,7 @@
 
 - `EdgeComputing/`：移动边缘计算（MEC）应用
 - `TCP/`：多路径 TCP 应用
+- `data/`：论文中使用的实验结果文件
 
 两种应用各对比五种算法：
 `psma`、`hlinucb`、`tsicf`、`gcl`、`glmucb`。
