@@ -1,0 +1,26 @@
+function seedPlan = make_tcp_seed_plan(baseSeed, index)
+
+assert(isscalar(index) && index >= 1 && index == floor(index), ...
+    'tcpcmp:InvalidReplicate', 'Replicate index must be a positive integer.');
+
+seedPlan.environment = baseSeed + 100000 * index;
+
+methodFieldMap = struct( ...
+    'psma',    'psma', ...
+    'hlinucb', 'hlinucb', ...
+    'tsicf',   'tsicf', ...
+    'gcl',     'gcl', ...
+    'glmucb',  'glmucb');
+methodPolicyOffset = containers.Map({'psma', 'hlinucb', 'tsicf', 'gcl', 'glmucb'}, ...
+    [1100, 1200, 1300, 1400, 1500]);
+methodFeedbackOffset = containers.Map({'psma', 'hlinucb', 'tsicf', 'gcl', 'glmucb'}, ...
+    [5100, 5200, 5300, 5400, 5500]);
+
+methods = fieldnames(methodFieldMap);
+for m = 1:numel(methods)
+    method = methods{m};
+    field = methodFieldMap.(method);
+    seedPlan.(field).policy   = seedPlan.environment + methodPolicyOffset(method);
+    seedPlan.(field).feedback = seedPlan.environment + methodFeedbackOffset(method);
+end
+end

@@ -1,0 +1,18 @@
+# MATLAB
+*.asv
+
+# 运行结果（campaign checkpoints / 数据）
+results/
+*.mat
+
+# 绘图脚本生成的图
+*.png
+*.pdf
+*.eps
+
+# 日志
+*.log
+
+# 编辑器 / 系统文件
+.DS_Store
+Thumbs.db
