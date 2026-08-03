@@ -9,7 +9,7 @@
 - `TCP/`：多路径 TCP 应用
 
 两种应用各对比五种算法：
-`psma`（PS-MA）、`hlinucb`、`tsicf`、`gcl2c`/`gcl`（GCL-PSMC）、`glmucb`。
+`psma`、`hlinucb`、`tsicf`、`gcl`、`glmucb`。
 
 ## 运行 1000-seed 实验
 
